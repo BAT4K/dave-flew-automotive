@@ -154,7 +154,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
                 <div className="relative">
                   <DatePicker
                     selected={scheduledDate}
-                    onChange={(date) => setScheduledDate(date)}
+                    onChange={(date: Date | null) => setScheduledDate(date)}
                     showTimeSelect
                     timeFormat="HH:mm"
                     timeIntervals={15}

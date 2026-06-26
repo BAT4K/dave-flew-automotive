@@ -142,7 +142,7 @@ export default function BookingForm() {
           </label>
           <DatePicker
             selected={preferredDay}
-            onChange={(date) => setPreferredDay(date)}
+            onChange={(date: Date | null) => setPreferredDay(date)}
             id="preferred_day"
             name="preferred_day"
             required
