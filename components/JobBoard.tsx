@@ -13,6 +13,7 @@ type Job = {
   car_reg: string;
   problem_description: string;
   preferred_day: string;
+  preferred_time_frame: string | null;
   scheduled_datetime: string | null;
   status: "Requested" | "Scheduled" | "In Progress" | "Ready" | "Collected";
   diagnosis_notes: string | null;
@@ -89,7 +90,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
   const formattedPhone = formatWhatsAppNumber(job.customer_phone);
   
   const [prefYear, prefMonth, prefDay] = job.preferred_day.split("-");
-  const formattedPrefDate = `${prefDay}/${prefMonth}/${prefYear}`;
+  const formattedPrefDate = `${prefDay}/${prefMonth}/${prefYear}${job.preferred_time_frame && job.preferred_time_frame !== "Anytime" ? ` (${job.preferred_time_frame})` : ""}`;
 
   const formattedDate = job.scheduled_datetime 
     ? new Date(job.scheduled_datetime).toLocaleString("en-GB", { dateStyle: 'short', timeStyle: 'short' })

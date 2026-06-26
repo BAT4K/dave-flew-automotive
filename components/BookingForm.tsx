@@ -10,6 +10,7 @@ export default function BookingForm() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [preferredDay, setPreferredDay] = useState<Date | null>(null);
+  const [preferredTimeFrame, setPreferredTimeFrame] = useState("Anytime");
 
   const supabase = createClient();
 
@@ -31,6 +32,7 @@ export default function BookingForm() {
       car_reg: (formData.get("car_reg") as string).toUpperCase(),
       problem_description: formData.get("problem_description") as string,
       preferred_day: preferredDay ? new Date(preferredDay.getTime() - preferredDay.getTimezoneOffset() * 60000).toISOString().split("T")[0] : "",
+      preferred_time_frame: preferredTimeFrame,
       status: "Requested",
     };
 
@@ -112,30 +114,30 @@ export default function BookingForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label htmlFor="car_reg" className="block text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">
-            Car Registration
-          </label>
-          <input
-            type="text"
-            id="car_reg"
-            name="car_reg"
-            required
-            maxLength={10}
-            onChange={(e) => {
-              e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9\s]/g, "");
-            }}
-            pattern="^[A-Z0-9\s]+$"
-            title="Please enter a valid UK car registration (letters and numbers only)"
-            className="w-full px-4 py-3.5 bg-slate-50 border-2 border-slate-200 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-colors shadow-inner text-slate-900 font-bold placeholder:font-normal peer"
-            placeholder="AB12 CDE"
-          />
-          <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
-            Letters and numbers only.
-          </span>
-        </div>
+      <div>
+        <label htmlFor="car_reg" className="block text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">
+          Car Registration
+        </label>
+        <input
+          type="text"
+          id="car_reg"
+          name="car_reg"
+          required
+          maxLength={10}
+          onChange={(e) => {
+            e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9\s]/g, "");
+          }}
+          pattern="^[A-Z0-9\s]+$"
+          title="Please enter a valid UK car registration (letters and numbers only)"
+          className="w-full px-4 py-3.5 bg-slate-50 border-2 border-slate-200 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-colors shadow-inner text-slate-900 font-bold placeholder:font-normal peer"
+          placeholder="AB12 CDE"
+        />
+        <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
+          Letters and numbers only.
+        </span>
+      </div>
 
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="group">
           <label htmlFor="preferred_day" className="block text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">
             Preferred Day
@@ -155,6 +157,24 @@ export default function BookingForm() {
           <span className="hidden group-has-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
             Please select a preferred day.
           </span>
+        </div>
+
+        <div>
+          <label htmlFor="preferred_time_frame" className="block text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">
+            Preferred Drop-off Time
+          </label>
+          <select
+            id="preferred_time_frame"
+            name="preferred_time_frame"
+            value={preferredTimeFrame}
+            onChange={(e) => setPreferredTimeFrame(e.target.value)}
+            className="w-full px-4 py-3.5 bg-slate-50 border-2 border-slate-200 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-colors shadow-inner text-slate-900 font-medium appearance-none cursor-pointer"
+          >
+            <option value="Anytime">Anytime</option>
+            <option value="Morning (Before 12pm)">Morning (Before 12pm)</option>
+            <option value="Early Afternoon (12pm - 2pm)">Early Afternoon (12pm - 2pm)</option>
+            <option value="Late Afternoon (2pm - 5pm)">Late Afternoon (2pm - 5pm)</option>
+          </select>
         </div>
       </div>
 
