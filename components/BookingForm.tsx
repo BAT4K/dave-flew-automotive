@@ -80,7 +80,7 @@ export default function BookingForm() {
             required
             autoComplete="name"
             maxLength={100}
-            className="w-full px-4 py-3.5 bg-slate-50 border-2 border-slate-200 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-colors shadow-inner text-slate-900 font-medium peer"
+            className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-slate-900 font-medium peer"
             placeholder="JOHN DOE"
           />
           <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
@@ -105,7 +105,7 @@ export default function BookingForm() {
             }}
             pattern="^(?:0|\+44)[0-9\s\-\(\)]{9,18}$"
             title="Please enter a valid UK phone number starting with 0 or +44"
-            className="w-full px-4 py-3.5 bg-slate-50 border-2 border-slate-200 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-colors shadow-inner text-slate-900 font-medium peer"
+            className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-slate-900 font-medium peer"
             placeholder="07700 900000"
           />
           <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
@@ -129,7 +129,7 @@ export default function BookingForm() {
           }}
           pattern="^[A-Z0-9\s]+$"
           title="Please enter a valid UK car registration (letters and numbers only)"
-          className="w-full px-4 py-3.5 bg-slate-50 border-2 border-slate-200 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-colors shadow-inner text-slate-900 font-bold placeholder:font-normal peer"
+          className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-slate-900 font-bold placeholder:font-normal peer"
           placeholder="AB12 CDE"
         />
         <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
@@ -151,7 +151,7 @@ export default function BookingForm() {
             minDate={new Date()}
             dateFormat="dd/MM/yyyy"
             calendarStartDay={1}
-            className="w-full px-4 py-3.5 bg-slate-50 border-2 border-slate-200 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-colors shadow-inner text-slate-900 font-medium"
+            className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-slate-900 font-medium"
             placeholderText="DD/MM/YYYY"
           />
           <span className="hidden group-has-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
@@ -168,7 +168,7 @@ export default function BookingForm() {
             name="preferred_time_frame"
             value={preferredTimeFrame}
             onChange={(e) => setPreferredTimeFrame(e.target.value)}
-            className="w-full px-4 py-3.5 bg-slate-50 border-2 border-slate-200 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-colors shadow-inner text-slate-900 font-medium appearance-none cursor-pointer"
+            className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-slate-900 font-medium appearance-none cursor-pointer"
           >
             <option value="Anytime">Anytime</option>
             <option value="Morning (Before 12pm)">Morning (Before 12pm)</option>
@@ -189,7 +189,7 @@ export default function BookingForm() {
           minLength={10}
           maxLength={1000}
           rows={4}
-          className="w-full px-4 py-3.5 bg-slate-50 border-2 border-slate-200 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-colors shadow-inner resize-none text-slate-900 font-medium peer"
+          className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] resize-none text-slate-900 font-medium peer"
           placeholder="Please describe what needs fixing..."
         />
         <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
