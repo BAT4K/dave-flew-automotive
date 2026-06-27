@@ -92,6 +92,25 @@ export default function Home() {
             </div>
           </div>
 
+        {/* Gallery Section */}
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 uppercase tracking-tight flex items-center gap-3">
+            <span className="w-8 h-1 bg-red-600 inline-block"></span>
+            Inside the Shop
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
+              <Image src="/images/chunkofmetal.jpg" alt="Welding work" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale contrast-125 group-hover:grayscale-0 active:grayscale-0 transition-all duration-500" />
+            </div>
+            <div className="relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
+              <Image src="/images/fancyengine.jpg" alt="Engine repair" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale contrast-125 group-hover:grayscale-0 active:grayscale-0 transition-all duration-500" />
+            </div>
+            <div className="relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
+              <Image src="/images/wheel.jpg" alt="Wheel service" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale contrast-125 group-hover:grayscale-0 active:grayscale-0 transition-all duration-500" />
+            </div>
+          </div>
+        </div>
+
         {/* Booking Section */}
         <div className="bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] md:shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] p-6 sm:p-8 md:p-12 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-2 bg-red-600"></div>
