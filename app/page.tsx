@@ -24,14 +24,14 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative bg-black border-b-8 border-red-600 overflow-hidden group">
-        <div className="absolute top-0 left-0 w-full h-[60vh] sm:h-full overflow-hidden [mask-image:linear-gradient(to_bottom,black_40%,transparent_100%)] sm:[mask-image:none]">
+        <div className="absolute inset-0 overflow-hidden">
           <Image
             src="/images/car.jpg"
             alt="Dave Flew Automotive Garage"
             fill
             sizes="100vw"
             quality={60}
-            className="object-cover object-[center_60%] sm:object-center grayscale contrast-125 opacity-40 animate-zoom-in"
+            className="object-cover object-center grayscale contrast-125 opacity-30 animate-zoom-in"
             priority
           />
         </div>
