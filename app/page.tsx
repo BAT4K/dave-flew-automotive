@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-red-600 selection:text-white">
       {/* Header */}
-      <header className="bg-slate-900 border-b-4 border-red-600 sticky top-0 z-10 shadow-md">
+      <header className="absolute w-full top-0 z-50 bg-black/40 backdrop-blur-sm border-b-2 border-red-600/50">
         <div className="max-w-4xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -23,35 +23,35 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative bg-slate-900 border-b-4 border-slate-900 overflow-hidden">
+      <section className="relative bg-black border-b-8 border-red-600 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/chunkofmetal.jpg"
-            alt="Dave Flew Automotive metalwork"
+            src="/images/car.jpg"
+            alt="Dave Flew Automotive Garage"
             fill
-            className="object-cover grayscale contrast-125 opacity-40 mix-blend-luminosity"
+            className="object-cover object-center grayscale contrast-125 opacity-30"
             priority
           />
         </div>
-        <div className="relative max-w-4xl mx-auto px-6 py-20 md:py-32 z-0">
-          <div className="inline-block bg-red-600 text-white px-4 py-1.5 text-sm font-black uppercase tracking-widest mb-6 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
+        <div className="relative max-w-5xl mx-auto px-6 pt-36 pb-24 md:pt-48 md:pb-32 flex flex-col items-center text-center z-10">
+          <div className="inline-block bg-red-600 text-white px-6 py-2 text-sm font-black uppercase tracking-widest mb-8 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] transform -rotate-2">
             Professional Garage Services
           </div>
-          <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter uppercase leading-[1.05]">
-            Expert Auto Repair <br className="hidden md:block" />
-            <span className="text-slate-400">You Can Trust</span>
+          <h2 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase leading-[0.95] drop-shadow-2xl">
+            Expert Auto Repair <br />
+            <span className="text-red-600">You Can Trust</span>
           </h2>
           
-          <div className="flex items-center gap-3 mb-8 bg-slate-900/80 backdrop-blur-sm p-3 md:p-4 inline-flex border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] flex-wrap">
-            <div className="flex text-amber-400 text-xl">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span className="text-amber-400/50">★</span>
-            </div>
-            <span className="text-white font-bold tracking-tight">4.8 Rating <span className="font-medium text-slate-400 ml-1">(14 Google Reviews)</span></span>
-          </div>
-
-          <p className="text-xl md:text-2xl text-slate-200 leading-relaxed max-w-2xl font-bold border-l-4 border-red-600 pl-5 bg-slate-900/60 p-4">
+          <p className="text-xl md:text-2xl text-slate-200 leading-relaxed max-w-3xl font-bold bg-slate-900/90 p-6 md:p-8 border-4 border-slate-900 shadow-[8px_8px_0px_0px_rgba(220,38,38,1)] mb-10">
             Quality service, honest pricing, and quick turnaround. Serving our local community with dedication and precision.
           </p>
+
+          <div className="flex items-center gap-4 bg-white p-4 md:p-5 inline-flex border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] transform hover:scale-105 transition-transform">
+            <div className="flex text-amber-500 text-2xl">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span className="text-amber-500/50">★</span>
+            </div>
+            <span className="text-slate-900 font-black tracking-tight text-xl">4.8 Rating <span className="font-bold text-slate-500 ml-1 text-base">(14 Google Reviews)</span></span>
+          </div>
         </div>
       </section>
 
