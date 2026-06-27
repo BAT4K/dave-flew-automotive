@@ -35,24 +35,24 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center z-10 animate-fade-up">
-          <div className="inline-block bg-red-600 text-white px-6 py-2 text-sm font-black uppercase tracking-widest mb-8 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] transform -rotate-2 hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] transition-all cursor-default">
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 flex flex-col items-center text-center z-10 animate-fade-up">
+          <div className="inline-block bg-red-600 text-white px-4 sm:px-6 py-2 text-xs sm:text-sm font-black uppercase tracking-widest mb-6 sm:mb-8 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] transform -rotate-2 hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] transition-all cursor-default">
             Professional Garage Services
           </div>
-          <h2 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase leading-[0.95] drop-shadow-2xl">
+          <h2 className="text-5xl sm:text-6xl md:text-8xl font-black text-white mb-6 sm:mb-8 tracking-tighter uppercase leading-[0.95] drop-shadow-2xl">
             Expert Auto Repair <br />
             <span className="text-red-600">You Can Trust</span>
           </h2>
           
-          <p className="text-xl md:text-2xl text-slate-200 leading-relaxed max-w-3xl font-bold bg-slate-900/90 p-6 md:p-8 border-4 border-slate-900 shadow-[8px_8px_0px_0px_rgba(220,38,38,1)] mb-10">
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-200 leading-relaxed max-w-3xl font-bold bg-slate-900/90 p-4 sm:p-6 md:p-8 border-4 border-slate-900 shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] sm:shadow-[8px_8px_0px_0px_rgba(220,38,38,1)] mb-8 sm:mb-10 mx-2 sm:mx-0">
             Quality service, honest pricing, and quick turnaround. Serving our local community with dedication and precision.
           </p>
 
-          <div className="flex items-center gap-4 bg-white p-4 md:p-5 inline-flex border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] transform hover:scale-105 transition-transform">
-            <div className="flex text-amber-500 text-2xl">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 bg-white p-3 sm:p-4 md:p-5 inline-flex border-4 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] sm:shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] transform hover:scale-105 transition-transform">
+            <div className="flex text-amber-500 text-xl sm:text-2xl">
               <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
-            <span className="text-slate-900 font-black tracking-tight text-xl">4.8 Rating <span className="font-bold text-slate-500 ml-1 text-base">(14 Google Reviews)</span></span>
+            <span className="text-slate-900 font-black tracking-tight text-lg sm:text-xl">4.8 Rating <span className="font-bold text-slate-500 ml-1 text-sm sm:text-base block sm:inline">(14 Google Reviews)</span></span>
           </div>
         </div>
       </section>
@@ -98,14 +98,14 @@ export default function Home() {
             <span className="w-8 h-1 bg-red-600 inline-block"></span>
             Inside the Shop
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
+            <div className="flex-none w-[85%] sm:w-auto snap-center sm:snap-align-none relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
               <Image src="/images/chunkofmetal.jpg" alt="Welding work" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale contrast-125 group-hover:grayscale-0 active:grayscale-0 transition-all duration-500" />
             </div>
-            <div className="relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
+            <div className="flex-none w-[85%] sm:w-auto snap-center sm:snap-align-none relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
               <Image src="/images/fancyengine.jpg" alt="Engine repair" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale contrast-125 group-hover:grayscale-0 active:grayscale-0 transition-all duration-500" />
             </div>
-            <div className="relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
+            <div className="flex-none w-[85%] sm:w-auto snap-center sm:snap-align-none relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
               <Image src="/images/wheel.jpg" alt="Wheel service" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale contrast-125 group-hover:grayscale-0 active:grayscale-0 transition-all duration-500" />
             </div>
           </div>
