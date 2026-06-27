@@ -48,7 +48,7 @@ export default function Home() {
 
           <div className="flex items-center gap-4 bg-white p-4 md:p-5 inline-flex border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] transform hover:scale-105 transition-transform">
             <div className="flex text-amber-500 text-2xl">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span className="text-amber-500/50">★</span>
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
             <span className="text-slate-900 font-black tracking-tight text-xl">4.8 Rating <span className="font-bold text-slate-500 ml-1 text-base">(14 Google Reviews)</span></span>
           </div>
