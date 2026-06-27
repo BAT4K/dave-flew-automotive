@@ -1,5 +1,6 @@
 import BookingForm from "@/components/BookingForm";
 import Reviews from "@/components/Reviews";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -21,28 +22,41 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-12 md:py-20">
-        <div className="mb-12 md:mb-16 text-center md:text-left">
-          <div className="inline-block bg-red-100 text-red-800 px-3 py-1 text-sm font-bold uppercase tracking-widest mb-4 border border-red-200 shadow-sm">
+      {/* Hero Section */}
+      <section className="relative bg-slate-900 border-b-4 border-slate-900 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/chunkofmetal.jpg"
+            alt="Dave Flew Automotive metalwork"
+            fill
+            className="object-cover grayscale contrast-125 opacity-40 mix-blend-luminosity"
+            priority
+          />
+        </div>
+        <div className="relative max-w-4xl mx-auto px-6 py-20 md:py-32 z-0">
+          <div className="inline-block bg-red-600 text-white px-4 py-1.5 text-sm font-black uppercase tracking-widest mb-6 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)]">
             Professional Garage Services
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4 tracking-tighter uppercase leading-[1.1]">
+          <h2 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter uppercase leading-[1.05]">
             Expert Auto Repair <br className="hidden md:block" />
-            <span className="text-slate-500">You Can Trust</span>
+            <span className="text-slate-400">You Can Trust</span>
           </h2>
           
-          <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
-            <div className="flex text-amber-500 text-xl">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span className="text-amber-500/80">★</span>
+          <div className="flex items-center gap-3 mb-8 bg-slate-900/80 backdrop-blur-sm p-3 md:p-4 inline-flex border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] flex-wrap">
+            <div className="flex text-amber-400 text-xl">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span className="text-amber-400/50">★</span>
             </div>
-            <span className="text-slate-900 font-bold tracking-tight">4.8 Rating <span className="font-medium text-slate-500 ml-1">(14 Google Reviews)</span></span>
+            <span className="text-white font-bold tracking-tight">4.8 Rating <span className="font-medium text-slate-400 ml-1">(14 Google Reviews)</span></span>
           </div>
 
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl font-medium mx-auto md:mx-0">
+          <p className="text-xl md:text-2xl text-slate-200 leading-relaxed max-w-2xl font-bold border-l-4 border-red-600 pl-5 bg-slate-900/60 p-4">
             Quality service, honest pricing, and quick turnaround. Serving our local community with dedication and precision.
           </p>
-          
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <main className="max-w-4xl mx-auto px-6 py-12 md:py-20">
           {/* Info Blocks */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 text-left">
             <div className="bg-white p-6 md:p-8 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] relative overflow-hidden transition-transform hover:-translate-y-1">
@@ -75,7 +89,6 @@ export default function Home() {
               </ul>
             </div>
           </div>
-        </div>
 
         {/* Booking Section */}
         <div className="bg-white border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] md:shadow-[8px_8px_0px_0px_rgba(15,23,42,1)] p-6 sm:p-8 md:p-12 relative overflow-hidden">
