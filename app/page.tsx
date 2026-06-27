@@ -31,7 +31,7 @@ export default function Home() {
             fill
             sizes="100vw"
             quality={60}
-            className="object-cover object-center grayscale contrast-125 opacity-30 animate-zoom-in"
+            className="object-contain object-top sm:object-cover sm:object-center grayscale contrast-125 opacity-30 animate-zoom-in [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_50%,rgba(0,0,0,0)_100%)] sm:[mask-image:none]"
             priority
           />
         </div>
