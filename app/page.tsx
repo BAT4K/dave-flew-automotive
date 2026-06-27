@@ -36,7 +36,7 @@ export default function Home() {
           />
         </div>
         <div className="relative max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center z-10 animate-fade-up">
-          <div className="inline-block bg-red-600 text-white px-6 py-2 text-sm font-black uppercase tracking-widest mb-8 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] transform -rotate-2 hover:animate-glitch cursor-default">
+          <div className="inline-block bg-red-600 text-white px-6 py-2 text-sm font-black uppercase tracking-widest mb-8 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] transform -rotate-2 hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] transition-all cursor-default">
             Professional Garage Services
           </div>
           <h2 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase leading-[0.95] drop-shadow-2xl">
