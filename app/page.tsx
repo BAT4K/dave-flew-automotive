@@ -23,18 +23,20 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative bg-black border-b-8 border-red-600 overflow-hidden">
-        <div className="absolute inset-0">
+      <section className="relative bg-black border-b-8 border-red-600 overflow-hidden group">
+        <div className="absolute inset-0 overflow-hidden">
           <Image
             src="/images/car.jpg"
             alt="Dave Flew Automotive Garage"
             fill
-            className="object-cover object-center grayscale contrast-125 opacity-30"
+            sizes="100vw"
+            quality={60}
+            className="object-cover object-center grayscale contrast-125 opacity-30 animate-zoom-in"
             priority
           />
         </div>
-        <div className="relative max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center z-10">
-          <div className="inline-block bg-red-600 text-white px-6 py-2 text-sm font-black uppercase tracking-widest mb-8 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] transform -rotate-2">
+        <div className="relative max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center z-10 animate-fade-up">
+          <div className="inline-block bg-red-600 text-white px-6 py-2 text-sm font-black uppercase tracking-widest mb-8 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] transform -rotate-2 hover:animate-glitch cursor-default">
             Professional Garage Services
           </div>
           <h2 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase leading-[0.95] drop-shadow-2xl">
