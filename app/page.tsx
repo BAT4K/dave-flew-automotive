@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-red-600 selection:text-white">
       {/* Header */}
-      <header className="absolute w-full top-0 z-50 bg-black/40 backdrop-blur-sm border-b-2 border-red-600/50">
+      <header className="bg-slate-900 border-b-4 border-red-600 sticky top-0 z-50 shadow-md">
         <div className="max-w-4xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="relative max-w-5xl mx-auto px-6 pt-36 pb-24 md:pt-48 md:pb-32 flex flex-col items-center text-center z-10">
+        <div className="relative max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center z-10">
           <div className="inline-block bg-red-600 text-white px-6 py-2 text-sm font-black uppercase tracking-widest mb-8 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] transform -rotate-2">
             Professional Garage Services
           </div>
@@ -58,7 +58,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-12 md:py-20">
           {/* Info Blocks */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12 md:mb-16 text-left">
             <div className="bg-white p-6 md:p-8 border-2 border-slate-900 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] relative overflow-hidden transition-transform hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-1.5 h-full bg-slate-900"></div>
               <h3 className="font-black text-slate-900 text-lg uppercase tracking-wide mb-2 flex items-center gap-2">
