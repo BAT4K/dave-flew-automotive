@@ -15,9 +15,9 @@ export default async function AdminPage() {
 
   return (
     <div>
-      <div className="mb-10 border-b-4 border-slate-900 pb-6">
-        <h1 className="text-4xl font-extrabold uppercase tracking-tight text-slate-900">Mission Control</h1>
-        <p className="text-slate-600 mt-2 font-bold uppercase tracking-wide text-sm">Manage all booking requests and active jobs.</p>
+      <div className="mb-10 border-b-4 border-black pb-6">
+        <h1 className="text-4xl font-extrabold uppercase tracking-tight text-black">Mission Control</h1>
+        <p className="text-neutral-600 mt-2 font-bold uppercase tracking-wide text-sm">Manage all booking requests and active jobs.</p>
       </div>
       <JobBoard initialJobs={jobs || []} />
     </div>
