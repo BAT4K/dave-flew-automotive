@@ -9,11 +9,14 @@ export default function Home() {
       <header className="bg-slate-900 border-b-4 border-red-600 sticky top-0 z-50 shadow-md">
         <div className="max-w-4xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <h1 className="text-2xl font-black text-white tracking-tight uppercase">Dave Flew <span className="text-red-600">Automotive</span></h1>
+            <Image 
+              src="/images/big_logo.jpg" 
+              alt="Dave Flew Automotive" 
+              width={180} 
+              height={90} 
+              className="w-32 sm:w-44 h-auto" 
+              priority
+            />
           </div>
           <a href="tel:+447936598298" className="flex items-center gap-2 text-white hover:text-red-400 transition-colors">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
@@ -92,22 +95,46 @@ export default function Home() {
             </div>
           </div>
 
+        {/* Services Section */}
+        <div className="mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 uppercase tracking-tight flex items-center gap-3">
+            <span className="w-8 h-1 bg-red-600 inline-block"></span>
+            Services We Offer
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              "Clutches", "Timing Belts", "Servicing", "Fabrication", 
+              "Welding", "Stainless Steel Exhausts", "Lanoguard Underbody Rust Proofing", 
+              "Restoration", "Engine Works", "Diagnostics"
+            ].map((service, index) => (
+              <div key={index} className="bg-white border-2 border-slate-900 p-4 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(220,38,38,1)] transition-all group flex items-center justify-center text-center min-h-[100px]">
+                <span className="font-black text-slate-900 uppercase tracking-tight group-hover:text-red-600 transition-colors text-sm sm:text-base">{service}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Gallery Section */}
         <div className="mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 uppercase tracking-tight flex items-center gap-3">
             <span className="w-8 h-1 bg-red-600 inline-block"></span>
             Inside the Shop
           </h2>
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
-            <div className="flex-none w-[85%] sm:w-auto snap-center sm:snap-align-none relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
-              <Image src="/images/chunkofmetal.jpg" alt="Welding work" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale contrast-125 group-hover:grayscale-0 active:grayscale-0 transition-all duration-500" />
-            </div>
-            <div className="flex-none w-[85%] sm:w-auto snap-center sm:snap-align-none relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
-              <Image src="/images/fancyengine.jpg" alt="Engine repair" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale contrast-125 group-hover:grayscale-0 active:grayscale-0 transition-all duration-500" />
-            </div>
-            <div className="flex-none w-[85%] sm:w-auto snap-center sm:snap-align-none relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
-              <Image src="/images/wheel.jpg" alt="Wheel service" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale contrast-125 group-hover:grayscale-0 active:grayscale-0 transition-all duration-500" />
-            </div>
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-4 sm:gap-6 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
+            {[
+              { src: "/images/van4withdaveflew.jpg", alt: "Classic VW Camper" },
+              { src: "/images/machinery.jpg", alt: "Brake Caliper Installation" },
+              { src: "/images/v6engine.jpg", alt: "Restored V6 Engine" },
+              { src: "/images/parts3.jpg", alt: "Restored Subframe Assembly" },
+              { src: "/images/car_exhaust.jpg", alt: "Custom Stainless Steel Exhaust" },
+              { src: "/images/merc.jpg", alt: "Classic Mercedes Sedan" },
+              { src: "/images/jeep3.jpg", alt: "Custom Jeep Wrangler" },
+              { src: "/images/bmw3.jpg", alt: "BMW Z3 Convertible" }
+            ].map((img, i) => (
+              <div key={i} className="flex-none w-[85%] sm:w-auto snap-center sm:snap-align-none relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1">
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover grayscale contrast-125 group-hover:grayscale-0 active:grayscale-0 transition-all duration-500" />
+              </div>
+            ))}
           </div>
         </div>
 
@@ -128,7 +155,13 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 py-12 mt-12 border-t-4 border-red-600">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-2xl font-black text-white tracking-tight uppercase mb-4">Dave Flew <span className="text-red-600">Automotive</span></h2>
+          <Image 
+            src="/images/big_logo.jpg" 
+            alt="Dave Flew Automotive" 
+            width={160} 
+            height={80} 
+            className="w-32 sm:w-40 h-auto mx-auto mb-6" 
+          />
           <p className="text-slate-400 font-medium mb-6 uppercase tracking-widest text-sm">Expert Auto Repair You Can Trust</p>
           <div className="w-16 h-1 bg-red-600 mx-auto mb-6"></div>
           <p className="text-sm font-medium mb-2">
