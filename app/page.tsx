@@ -143,7 +143,7 @@ export default function Home() {
           <div className="absolute top-0 left-0 w-full h-2 bg-red-600"></div>
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-black text-black mb-3 uppercase tracking-tight">Book an Appointment</h2>
-            <p className="text-neutral-600 font-medium text-lg max-w-xl">Fill in the details below and our team will be in touch to confirm your slot.</p>
+            <p className="text-neutral-600 font-medium text-lg max-w-2xl">Fill in the details below and our team will be in touch to confirm your slot.</p>
           </div>
           
           <BookingForm />
