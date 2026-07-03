@@ -120,7 +120,7 @@ export default function Home() {
             <span className="w-8 h-1 bg-red-600 inline-block"></span>
             Inside the Shop
           </h2>
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-4 sm:gap-6 sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden" style={{ scrollbarWidth: 'none' }}>
+          <div className="columns-1 sm:columns-2 lg:columns-4 gap-6 space-y-6">
             {[
               { src: "/images/van4withdaveflew.jpg", alt: "Classic VW Camper" },
               { src: "/images/machinery.jpg", alt: "Brake Caliper Installation" },
@@ -131,8 +131,9 @@ export default function Home() {
               { src: "/images/jeep3.jpg", alt: "Custom Jeep Wrangler" },
               { src: "/images/bmw3.jpg", alt: "BMW Z3 Convertible" }
             ].map((img, i) => (
-              <div key={i} className="flex-none w-[85%] sm:w-auto snap-center sm:snap-align-none relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1 bg-black">
-                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 25vw" className="object-contain group-hover:scale-110 transition-transform duration-500" />
+              <div key={i} className="break-inside-avoid relative border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] bg-black overflow-hidden group transition-transform hover:-translate-y-1">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto block group-hover:scale-110 transition-transform duration-500" />
               </div>
             ))}
           </div>

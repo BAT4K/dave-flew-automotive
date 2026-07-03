@@ -35,7 +35,7 @@ export default function Reviews() {
               <div className="flex text-amber-500 text-lg mb-4">
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
-              <p className="text-slate-700 font-medium leading-relaxed italic">"{review.text}"</p>
+              <p className="text-slate-700 font-medium leading-relaxed italic">&quot;{review.text}&quot;</p>
             </div>
             <div className="font-black text-slate-900 uppercase tracking-wide pt-4 border-t-2 border-slate-100 pl-2">
               {review.name}
