@@ -53,8 +53,8 @@ export default function BookingForm() {
       <div className="p-8 text-center bg-white border-2 border-green-500 shadow-[4px_4px_0px_0px_rgba(34,197,94,0.2)] rounded-none transition-all duration-300 ease-in-out relative">
         <div className="absolute top-0 left-0 w-2 h-full bg-green-500"></div>
         <svg className="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-        <h3 className="text-2xl font-black text-slate-900 mb-2 uppercase tracking-tight">Booking Request Sent</h3>
-        <p className="text-slate-600 font-medium">Thanks, Dave will confirm your slot shortly.</p>
+        <h3 className="text-2xl font-black text-black mb-2 uppercase tracking-tight">Booking Request Sent</h3>
+        <p className="text-neutral-600 font-medium">Thanks, Dave will confirm your slot shortly.</p>
       </div>
     );
   }
@@ -70,7 +70,7 @@ export default function BookingForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="customer_name" className="block text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">
+          <label htmlFor="customer_name" className="block text-sm font-bold text-black mb-2 uppercase tracking-wide">
             Full Name
           </label>
           <input
@@ -80,7 +80,7 @@ export default function BookingForm() {
             required
             autoComplete="name"
             maxLength={100}
-            className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-slate-900 font-medium peer"
+            className="w-full px-4 py-3.5 bg-white border-2 border-black rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-tranneutral-y-[2px] focus:-tranneutral-x-[2px] text-black font-medium peer"
             placeholder="JOHN DOE"
           />
           <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
@@ -89,7 +89,7 @@ export default function BookingForm() {
         </div>
 
         <div>
-          <label htmlFor="customer_phone" className="block text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">
+          <label htmlFor="customer_phone" className="block text-sm font-bold text-black mb-2 uppercase tracking-wide">
             Phone Number
           </label>
           <input
@@ -105,7 +105,7 @@ export default function BookingForm() {
             }}
             pattern="^(?:0|\+44)[0-9\s\-\(\)]{9,18}$"
             title="Please enter a valid UK phone number starting with 0 or +44"
-            className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-slate-900 font-medium peer"
+            className="w-full px-4 py-3.5 bg-white border-2 border-black rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-tranneutral-y-[2px] focus:-tranneutral-x-[2px] text-black font-medium peer"
             placeholder="07700 900000"
           />
           <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
@@ -115,7 +115,7 @@ export default function BookingForm() {
       </div>
 
       <div>
-        <label htmlFor="car_reg" className="block text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">
+        <label htmlFor="car_reg" className="block text-sm font-bold text-black mb-2 uppercase tracking-wide">
           Car Registration
         </label>
         <input
@@ -129,7 +129,7 @@ export default function BookingForm() {
           }}
           pattern="^[A-Z0-9\s]+$"
           title="Please enter a valid UK car registration (letters and numbers only)"
-          className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-slate-900 font-bold placeholder:font-normal peer"
+          className="w-full px-4 py-3.5 bg-white border-2 border-black rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-tranneutral-y-[2px] focus:-tranneutral-x-[2px] text-black font-bold placeholder:font-normal peer"
           placeholder="AB12 CDE"
         />
         <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
@@ -139,7 +139,7 @@ export default function BookingForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="group">
-          <label htmlFor="preferred_day" className="block text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">
+          <label htmlFor="preferred_day" className="block text-sm font-bold text-black mb-2 uppercase tracking-wide">
             Preferred Day
           </label>
           <DatePicker
@@ -151,7 +151,7 @@ export default function BookingForm() {
             minDate={new Date()}
             dateFormat="dd/MM/yyyy"
             calendarStartDay={1}
-            className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-slate-900 font-medium"
+            className="w-full px-4 py-3.5 bg-white border-2 border-black rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-tranneutral-y-[2px] focus:-tranneutral-x-[2px] text-black font-medium"
             placeholderText="DD/MM/YYYY"
           />
           <span className="hidden group-has-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
@@ -160,7 +160,7 @@ export default function BookingForm() {
         </div>
 
         <div>
-          <label htmlFor="preferred_time_frame" className="block text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">
+          <label htmlFor="preferred_time_frame" className="block text-sm font-bold text-black mb-2 uppercase tracking-wide">
             Preferred Drop-off Time
           </label>
           <select
@@ -168,7 +168,7 @@ export default function BookingForm() {
             name="preferred_time_frame"
             value={preferredTimeFrame}
             onChange={(e) => setPreferredTimeFrame(e.target.value)}
-            className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-slate-900 font-medium appearance-none cursor-pointer"
+            className="w-full px-4 py-3.5 bg-white border-2 border-black rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-tranneutral-y-[2px] focus:-tranneutral-x-[2px] text-black font-medium appearance-none cursor-pointer"
           >
             <option value="Anytime">Anytime</option>
             <option value="Morning (Before 12pm)">Morning (Before 12pm)</option>
@@ -179,7 +179,7 @@ export default function BookingForm() {
       </div>
 
       <div>
-        <label htmlFor="problem_description" className="block text-sm font-bold text-slate-900 mb-2 uppercase tracking-wide">
+        <label htmlFor="problem_description" className="block text-sm font-bold text-black mb-2 uppercase tracking-wide">
           Problem Description
         </label>
         <textarea
@@ -189,7 +189,7 @@ export default function BookingForm() {
           minLength={10}
           maxLength={1000}
           rows={4}
-          className="w-full px-4 py-3.5 bg-white border-2 border-slate-900 rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] resize-none text-slate-900 font-medium peer"
+          className="w-full px-4 py-3.5 bg-white border-2 border-black rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-tranneutral-y-[2px] focus:-tranneutral-x-[2px] resize-none text-black font-medium peer"
           placeholder="Please describe what needs fixing..."
         />
         <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
@@ -200,7 +200,7 @@ export default function BookingForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-red-600 text-white font-black py-4 px-3 sm:px-6 uppercase tracking-widest text-base md:text-lg hover:bg-red-700 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center cursor-pointer shadow-[4px_4px_0px_0px_rgba(15,23,42,0.9)] hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,0.9)] hover:translate-y-[2px] hover:translate-x-[2px] active:shadow-none active:translate-y-[4px] active:translate-x-[4px] border-2 border-slate-900 mt-8"
+        className="w-full bg-red-600 text-white font-black py-4 px-3 sm:px-6 uppercase tracking-widest text-base md:text-lg hover:bg-red-700 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,0.9)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.9)] hover:tranneutral-y-[2px] hover:tranneutral-x-[2px] active:shadow-none active:tranneutral-y-[4px] active:tranneutral-x-[4px] border-2 border-black mt-8"
       >
         {loading ? (
           <span className="w-6 h-6 border-4 border-red-800 border-t-white rounded-full animate-spin"></span>
