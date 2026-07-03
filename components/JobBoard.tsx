@@ -27,7 +27,7 @@ const STATUS_OPTIONS = ["Requested", "Scheduled", "In Progress", "Ready", "Colle
 const chevronSvg = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='4' stroke='%230f172a'%3E%3Cpath stroke-linecap='square' stroke-linejoin='miter' d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`;
 
 function formatWhatsAppNumber(phone: string) {
-  let cleaned = phone.replace(/\s+/g, "");
+  let cleaned = phone.replace(/\D/g, "");
   if (cleaned.startsWith("0")) {
     cleaned = cleaned.substring(1);
   }
