@@ -124,4 +124,7 @@ body {
   .react-datepicker__time-box {
     width: 100% !important;
   }
+  .react-datepicker__navigation--next {
+    right: 0.5rem !important;
+  }
 }
