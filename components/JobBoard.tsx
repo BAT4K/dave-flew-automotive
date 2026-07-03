@@ -18,6 +18,7 @@ type Job = {
   status: "Requested" | "Scheduled" | "In Progress" | "Ready" | "Collected";
   diagnosis_notes: string | null;
   estimated_hours: number | null;
+  final_price: number | null;
   created_at: string;
   updated_at: string;
 };
@@ -56,6 +57,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
       status: formData.get("status") as string,
       scheduled_datetime: scheduledDate ? scheduledDate.toISOString() : null,
       estimated_hours: formData.get("estimated_hours") ? parseFloat(formData.get("estimated_hours") as string) : null,
+      final_price: formData.get("final_price") ? parseFloat(formData.get("final_price") as string) : null,
       diagnosis_notes: formData.get("diagnosis_notes") as string,
     };
 
@@ -99,7 +101,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
   const confirmationMessage = encodeURIComponent(`Hi ${job.customer_name}, you are booked in at Dave Flew Automotive for ${formattedDate}.`);
   const reminderMessage = encodeURIComponent(`Hi ${job.customer_name}, just a quick reminder about your booking at Dave Flew Automotive for ${formattedDate}. Let me know if anything changes!`);
   const rescheduleMessage = encodeURIComponent(`Hi ${job.customer_name}, just a heads up that your car needs further work. We have moved your slot to ${formattedDate}.`);
-  const readyMessage = encodeURIComponent(`Hi ${job.customer_name}, your car is ready for collection at Dave Flew Automotive! The final total is £____. We accept Cash or Card on arrival. See you soon.`);
+  const readyMessage = encodeURIComponent(`Hi ${job.customer_name}, your car is ready for collection at Dave Flew Automotive! The final total is £${job.final_price ? job.final_price : "____"}. We accept Cash or Card on arrival. See you soon.`);
   const reviewMessage = encodeURIComponent(`Hi ${job.customer_name}, thanks for choosing Dave Flew Automotive! If you were happy with the service, it would mean the world if you could leave a quick review here: https://g.page/r/YOUR_GOOGLE_ID/review`);
 
   return (
@@ -137,7 +139,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
           </div>
 
           <form onSubmit={handleUpdate} className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
               <div>
                 <label className="block text-xs font-black text-black mb-2 uppercase tracking-widest">Status</label>
                 <select 
@@ -179,6 +181,19 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
                   defaultValue={job.estimated_hours || ""}
                   className="w-full h-12 px-4 bg-white border-2 border-black rounded-none focus:bg-neutral-50 focus:outline-none text-sm font-bold text-black [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [appearance:textfield]"
                   placeholder="e.g. 2.5"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-black text-black mb-2 uppercase tracking-widest">Final Price (£)</label>
+                <input 
+                  type="number" 
+                  name="final_price"
+                  step="0.01"
+                  min="0"
+                  defaultValue={job.final_price || ""}
+                  className="w-full h-12 px-4 bg-white border-2 border-black rounded-none focus:bg-neutral-50 focus:outline-none text-sm font-bold text-black [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [appearance:textfield]"
+                  placeholder="e.g. 450.00"
                 />
               </div>
             </div>
