@@ -98,12 +98,12 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
   const [formattedDate, setFormattedDate] = useState("a time to be confirmed");
 
   useEffect(() => {
-    if (job.scheduled_datetime) {
-      setFormattedDate(new Date(job.scheduled_datetime).toLocaleString("en-GB", { dateStyle: 'short', timeStyle: 'short' }));
+    if (scheduledDate) {
+      setFormattedDate(scheduledDate.toLocaleString("en-GB", { dateStyle: 'short', timeStyle: 'short' }));
     } else {
       setFormattedDate("a time to be confirmed");
     }
-  }, [job.scheduled_datetime]);
+  }, [scheduledDate]);
 
   const confirmationMessage = encodeURIComponent(`Hi ${job.customer_name}, you are booked in at Dave Flew Automotive for ${formattedDate}.`);
   const reminderMessage = encodeURIComponent(`Hi ${job.customer_name}, just a quick reminder about your booking at Dave Flew Automotive for ${formattedDate}. Let me know if anything changes!`);
