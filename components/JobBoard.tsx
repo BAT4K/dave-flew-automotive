@@ -200,7 +200,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
                     href={`https://wa.me/${formattedPhone}?text=${confirmationMessage}`}
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-[#25D366] hover:bg-[#1DA851] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:tranneutral-y-[2px] hover:tranneutral-x-[2px] text-[11px] sm:text-sm font-black uppercase tracking-widest transition-all flex-1 text-center cursor-pointer flex items-center justify-center"
+                    className="bg-[#25D366] hover:bg-[#1DA851] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] text-[11px] sm:text-sm font-black uppercase tracking-widest transition-all flex-1 text-center cursor-pointer flex items-center justify-center"
                   >
                     Send Confirmation
                   </a>
@@ -211,7 +211,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
                     href={`https://wa.me/${formattedPhone}?text=${rescheduleMessage}`}
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-[#25D366] hover:bg-[#1DA851] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:tranneutral-y-[2px] hover:tranneutral-x-[2px] text-[11px] sm:text-sm font-black uppercase tracking-widest transition-all flex-1 text-center cursor-pointer flex items-center justify-center"
+                    className="bg-[#25D366] hover:bg-[#1DA851] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] text-[11px] sm:text-sm font-black uppercase tracking-widest transition-all flex-1 text-center cursor-pointer flex items-center justify-center"
                   >
                     Send Reschedule
                   </a>
@@ -222,7 +222,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
                     href={`https://wa.me/${formattedPhone}?text=${readyMessage}`}
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-[#25D366] hover:bg-[#1DA851] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:tranneutral-y-[2px] hover:tranneutral-x-[2px] text-[11px] sm:text-sm font-black uppercase tracking-widest transition-all flex-1 text-center cursor-pointer flex items-center justify-center"
+                    className="bg-[#25D366] hover:bg-[#1DA851] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] text-[11px] sm:text-sm font-black uppercase tracking-widest transition-all flex-1 text-center cursor-pointer flex items-center justify-center"
                   >
                     Send Ready
                   </a>
@@ -234,14 +234,14 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
                   type="button"
                   onClick={handleDelete}
                   disabled={loading || isDeleting}
-                  className="w-full sm:w-auto h-12 bg-red-600 text-white px-6 rounded-none text-xs sm:text-sm font-black uppercase tracking-widest hover:bg-red-700 transition-all disabled:opacity-70 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:tranneutral-y-[2px] hover:tranneutral-x-[2px] cursor-pointer shrink-0"
+                  className="w-full sm:w-auto h-12 bg-red-600 text-white px-6 rounded-none text-xs sm:text-sm font-black uppercase tracking-widest hover:bg-red-700 transition-all disabled:opacity-70 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] cursor-pointer shrink-0"
                 >
                   {isDeleting ? "Deleting..." : "Delete"}
                 </button>
                 <button
                   type="submit"
                   disabled={loading || isDeleting}
-                  className="w-full sm:w-auto h-12 bg-black text-white px-8 rounded-none text-xs sm:text-sm font-black uppercase tracking-widest hover:bg-neutral-900 transition-all disabled:opacity-70 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:tranneutral-y-[2px] hover:tranneutral-x-[2px] cursor-pointer shrink-0"
+                  className="w-full sm:w-auto h-12 bg-black text-white px-8 rounded-none text-xs sm:text-sm font-black uppercase tracking-widest hover:bg-neutral-900 transition-all disabled:opacity-70 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] cursor-pointer shrink-0"
                 >
                   {loading ? "Saving..." : "Save Updates"}
                 </button>
@@ -305,7 +305,7 @@ export default function JobBoard({ initialJobs }: { initialJobs: Job[] }) {
             {inboxJobs.length > visibleInboxCount && (
               <button
                 onClick={() => setVisibleInboxCount(prev => prev + 10)}
-                className="w-full h-16 bg-black text-white border-2 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:tranneutral-y-[2px] hover:tranneutral-x-[2px] hover:bg-neutral-900 transition-all font-black text-base uppercase tracking-widest cursor-pointer mt-2"
+                className="w-full h-16 bg-black text-white border-2 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] hover:bg-neutral-900 transition-all font-black text-base uppercase tracking-widest cursor-pointer mt-2"
               >
                 Load More Requests
               </button>
@@ -334,7 +334,7 @@ export default function JobBoard({ initialJobs }: { initialJobs: Job[] }) {
             {activeJobs.length > visibleActiveCount && (
               <button
                 onClick={() => setVisibleActiveCount(prev => prev + 10)}
-                className="w-full h-16 bg-black text-white border-2 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:tranneutral-y-[2px] hover:tranneutral-x-[2px] hover:bg-neutral-900 transition-all font-black text-base uppercase tracking-widest cursor-pointer mt-2"
+                className="w-full h-16 bg-black text-white border-2 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] hover:bg-neutral-900 transition-all font-black text-base uppercase tracking-widest cursor-pointer mt-2"
               >
                 Load More Active Jobs
               </button>
@@ -380,7 +380,7 @@ export default function JobBoard({ initialJobs }: { initialJobs: Job[] }) {
                 {historyJobs.length > visibleHistoryCount && (
                   <button
                     onClick={() => setVisibleHistoryCount(prev => prev + 10)}
-                    className="w-full h-16 bg-black text-white border-2 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:tranneutral-y-[2px] hover:tranneutral-x-[2px] hover:bg-neutral-900 transition-all font-black text-base uppercase tracking-widest cursor-pointer mt-2"
+                    className="w-full h-16 bg-black text-white border-2 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] hover:bg-neutral-900 transition-all font-black text-base uppercase tracking-widest cursor-pointer mt-2"
                   >
                     Load More
                   </button>

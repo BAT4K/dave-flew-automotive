@@ -39,7 +39,7 @@ export default function Home() {
           />
         </div>
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 flex flex-col items-center text-center z-10 animate-fade-up">
-          <div className="inline-block bg-red-600 text-white px-4 sm:px-6 py-2 text-xs sm:text-sm font-black uppercase tracking-widest mb-6 sm:mb-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] transform -rotate-2 hover:tranneutral-y-[2px] hover:tranneutral-x-[2px] hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] transition-all cursor-default">
+          <div className="inline-block bg-red-600 text-white px-4 sm:px-6 py-2 text-xs sm:text-sm font-black uppercase tracking-widest mb-6 sm:mb-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(255,255,255,0.2)] transform -rotate-2 hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.2)] transition-all cursor-default">
             Professional Garage Services
           </div>
           <h2 className="text-5xl sm:text-6xl md:text-8xl font-black text-white mb-6 sm:mb-8 tracking-tighter uppercase leading-[0.95] drop-shadow-2xl">
@@ -64,7 +64,7 @@ export default function Home() {
       <main className="max-w-4xl mx-auto px-6 py-12 md:py-20">
           {/* Info Blocks */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12 md:mb-16 text-left">
-            <div className="bg-white p-6 md:p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden transition-transform hover:-tranneutral-y-1">
+            <div className="bg-white p-6 md:p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden transition-transform hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-1.5 h-full bg-black"></div>
               <h3 className="font-black text-black text-lg uppercase tracking-wide mb-2 flex items-center gap-2">
                 <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
@@ -75,12 +75,12 @@ export default function Home() {
                 href="https://www.google.com/maps/search/?api=1&query=Dave+Flew+Automotive,+Unit+1+Box+Bush+Ln,+Hewish,+Weston-super-Mare,+BS24+6UA"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-black text-white font-black text-xs uppercase tracking-widest px-4 py-2 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] hover:tranneutral-y-[1px] hover:tranneutral-x-[1px] transition-all"
+                className="inline-block bg-black text-white font-black text-xs uppercase tracking-widest px-4 py-2 border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[1px] hover:translate-x-[1px] transition-all"
               >
                 Get Directions
               </a>
             </div>
-            <div className="bg-white p-6 md:p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden transition-transform hover:-tranneutral-y-1">
+            <div className="bg-white p-6 md:p-8 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden transition-transform hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-1.5 h-full bg-black"></div>
               <h3 className="font-black text-black text-lg uppercase tracking-wide mb-2 flex items-center gap-2">
                 <svg className="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -107,7 +107,7 @@ export default function Home() {
               "Welding", "Stainless Steel Exhausts", "Lanoguard Underbody Rust Proofing", 
               "Restoration", "Engine Works", "Diagnostics"
             ].map((service, index) => (
-              <div key={index} className={`bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-tranneutral-y-1 hover:shadow-[6px_6px_0px_0px_rgba(220,38,38,1)] transition-all group flex items-center justify-center text-center min-h-[100px] ${index >= 8 ? 'md:col-span-2' : ''}`}>
+              <div key={index} className={`bg-white border-2 border-black p-4 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(220,38,38,1)] transition-all group flex items-center justify-center text-center min-h-[100px] ${index >= 8 ? 'md:col-span-2' : ''}`}>
                 <span className="font-black text-black uppercase tracking-tight group-hover:text-red-600 transition-colors text-sm sm:text-base">{service}</span>
               </div>
             ))}
@@ -131,7 +131,7 @@ export default function Home() {
               { src: "/images/new pics/bmw.jpg", alt: "BMW Convertible" },
               { src: "/images/new pics/blackcar2.jpg", alt: "Classic Car Restoration" }
             ].map((img, i) => (
-              <div key={i} className="relative aspect-video border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-black overflow-hidden group transition-transform hover:-tranneutral-y-1">
+              <div key={i} className="relative aspect-video border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-black overflow-hidden group transition-transform hover:-translate-y-1">
                 <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
               </div>
             ))}
