@@ -55,6 +55,8 @@ body {
   box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
   padding: 0.5rem;
   background-color: white;
+  display: flex !important;
+  flex-direction: row;
 }
 
 .react-datepicker__header {
