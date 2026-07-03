@@ -197,7 +197,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
             {/* WhatsApp & Save Actions */}
             <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-center gap-4 sm:gap-6 pt-6 border-t-4 border-black mt-8">
               <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-                {job.status === "Requested" && (
+                {(job.status === "Requested" || job.status === "Scheduled") && (
                   <a 
                     href={`https://wa.me/${formattedPhone}?text=${confirmationMessage}`}
                     target="_blank" 
