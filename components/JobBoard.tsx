@@ -103,7 +103,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
   const rescheduleMessage = encodeURIComponent(`Hi ${job.customer_name}, just a heads up that your car needs further work. We have moved your slot to ${formattedDate}.`);
   const formattedPrice = job.final_price ? Number(job.final_price).toFixed(2) : "____";
   const readyMessage = encodeURIComponent(`Hi ${job.customer_name}, your car is ready for collection at Dave Flew Automotive! The final total is £${formattedPrice}. We accept Cash or Card on arrival. See you soon.`);
-  const reviewMessage = encodeURIComponent(`Hi ${job.customer_name}, thanks for choosing Dave Flew Automotive! If you were happy with the service, it would mean the world if you could leave a quick review here: https://g.page/r/YOUR_GOOGLE_ID/review`);
+  const reviewMessage = encodeURIComponent(`Hi ${job.customer_name}, thanks for choosing Dave Flew Automotive! If you were happy with the service, it would mean the world if you could leave a quick review here: https://maps.app.goo.gl/97R6WnQy6yCcTpGS6`);
 
   return (
     <div className="bg-white border-2 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden mb-6 transition-all">
