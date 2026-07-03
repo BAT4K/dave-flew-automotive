@@ -152,6 +152,26 @@ export default function Home() {
         <Reviews />
       </main>
 
+      {/* Interactive Map Section */}
+      <section className="max-w-5xl mx-auto px-6 mb-12 md:mb-20">
+        <h2 className="text-3xl md:text-4xl font-black text-black mb-6 uppercase tracking-tight flex items-center gap-3">
+          <span className="w-8 h-1 bg-red-600 inline-block"></span>
+          Find Us Here
+        </h2>
+        <div className="border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] bg-black overflow-hidden group">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2491.6465768346943!2d-2.8606891227511992!3d51.35440922186744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871f7ba95505f97%3A0x8b2655fc0c077fa3!2sDave%20Flew%20Automotive!5e0!3m2!1sen!2sin!4v1783108140775!5m2!1sen!2sin" 
+            width="100%" 
+            height="450" 
+            style={{ border: 0 }} 
+            allowFullScreen={false} 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            className="w-full grayscale contrast-125 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out"
+          ></iframe>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-black text-neutral-400 py-12 mt-12 border-t-4 border-red-600">
         <div className="max-w-4xl mx-auto px-6 text-center">
