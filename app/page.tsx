@@ -10,7 +10,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Image 
-              src="/images/big_logo (Edited).jpg" 
+              src="/images/big_logo_final.jpg" 
               alt="Dave Flew Automotive" 
               width={256} 
               height={128} 
@@ -156,7 +156,7 @@ export default function Home() {
       <footer className="bg-black text-slate-400 py-12 mt-12 border-t-4 border-red-600">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Image 
-            src="/images/big_logo (Edited).jpg" 
+            src="/images/big_logo_final.jpg" 
             alt="Dave Flew Automotive" 
             width={200} 
             height={100} 
