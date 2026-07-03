@@ -97,8 +97,10 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
     : "a time to be confirmed";
 
   const confirmationMessage = encodeURIComponent(`Hi ${job.customer_name}, you are booked in at Dave Flew Automotive for ${formattedDate}.`);
+  const reminderMessage = encodeURIComponent(`Hi ${job.customer_name}, just a quick reminder about your booking at Dave Flew Automotive for ${formattedDate}. Let me know if anything changes!`);
   const rescheduleMessage = encodeURIComponent(`Hi ${job.customer_name}, just a heads up that your car needs further work. We have moved your slot to ${formattedDate}.`);
-  const readyMessage = encodeURIComponent(`Hi ${job.customer_name}, your car is ready for collection at Dave Flew Automotive! See you soon.`);
+  const readyMessage = encodeURIComponent(`Hi ${job.customer_name}, your car is ready for collection at Dave Flew Automotive! The final total is £____. We accept Cash or Card on arrival. See you soon.`);
+  const reviewMessage = encodeURIComponent(`Hi ${job.customer_name}, thanks for choosing Dave Flew Automotive! If you were happy with the service, it would mean the world if you could leave a quick review here: https://g.page/r/YOUR_GOOGLE_ID/review`);
 
   return (
     <div className="bg-white border-2 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-hidden mb-6 transition-all">
@@ -195,7 +197,7 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
             {/* WhatsApp & Save Actions */}
             <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-center gap-4 sm:gap-6 pt-6 border-t-4 border-black mt-8">
               <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-                {(job.status === "Requested" || job.status === "Scheduled") && (
+                {job.status === "Requested" && (
                   <a 
                     href={`https://wa.me/${formattedPhone}?text=${confirmationMessage}`}
                     target="_blank" 
@@ -203,6 +205,17 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
                     className="bg-[#25D366] hover:bg-[#1DA851] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] text-[11px] sm:text-sm font-black uppercase tracking-widest transition-all flex-1 text-center cursor-pointer flex items-center justify-center"
                   >
                     Send Confirmation
+                  </a>
+                )}
+
+                {job.status === "Scheduled" && (
+                  <a 
+                    href={`https://wa.me/${formattedPhone}?text=${reminderMessage}`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-[#25D366] hover:bg-[#1DA851] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] text-[11px] sm:text-sm font-black uppercase tracking-widest transition-all flex-1 text-center cursor-pointer flex items-center justify-center"
+                  >
+                    Send Reminder
                   </a>
                 )}
                 
@@ -225,6 +238,17 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
                     className="bg-[#25D366] hover:bg-[#1DA851] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] text-[11px] sm:text-sm font-black uppercase tracking-widest transition-all flex-1 text-center cursor-pointer flex items-center justify-center"
                   >
                     Send Ready
+                  </a>
+                )}
+
+                {job.status === "Collected" && (
+                  <a 
+                    href={`https://wa.me/${formattedPhone}?text=${reviewMessage}`}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-[#25D366] hover:bg-[#1DA851] text-white px-4 sm:px-6 py-3 sm:py-4 rounded-none border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:translate-x-[2px] text-[11px] sm:text-sm font-black uppercase tracking-widest transition-all flex-1 text-center cursor-pointer flex items-center justify-center"
+                  >
+                    Request Review
                   </a>
                 )}
               </div>
@@ -254,6 +278,52 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
   );
 }
 
+function CalendarView({ jobs }: { jobs: Job[] }) {
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
+  // Filter and sort jobs with a scheduled date
+  const scheduledJobs = jobs
+    .filter((j) => j.scheduled_datetime && j.status !== "Collected")
+    .sort((a, b) => new Date(a.scheduled_datetime!).getTime() - new Date(b.scheduled_datetime!).getTime());
+
+  // Group by day string
+  const groupedJobs: Record<string, Job[]> = {};
+  scheduledJobs.forEach(job => {
+    const d = new Date(job.scheduled_datetime!);
+    const dayStr = d.toLocaleDateString("en-GB", { weekday: 'long', day: 'numeric', month: 'long' });
+    if (!groupedJobs[dayStr]) {
+      groupedJobs[dayStr] = [];
+    }
+    groupedJobs[dayStr].push(job);
+  });
+
+  return (
+    <div className="space-y-8 animate-in fade-in duration-300">
+      {Object.keys(groupedJobs).length === 0 ? (
+        <p className="text-black font-bold uppercase tracking-widest bg-white p-8 rounded-none border-2 border-black text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">No scheduled jobs coming up.</p>
+      ) : (
+        Object.entries(groupedJobs).map(([dayStr, dayJobs]) => (
+          <div key={dayStr} className="border-2 border-black bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            <div className="bg-black text-white p-4">
+              <h3 className="font-black text-xl uppercase tracking-widest">{dayStr}</h3>
+            </div>
+            <div className="p-4 sm:p-6 space-y-4 bg-neutral-100">
+              {dayJobs.map(job => (
+                <JobCard 
+                  key={job.id} 
+                  job={job} 
+                  isExpanded={expandedId === job.id} 
+                  onToggleExpand={() => setExpandedId(expandedId === job.id ? null : job.id)} 
+                />
+              ))}
+            </div>
+          </div>
+        ))
+      )}
+    </div>
+  );
+}
+
 export default function JobBoard({ initialJobs }: { initialJobs: Job[] }) {
   const [search, setSearch] = useState("");
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -272,10 +342,32 @@ export default function JobBoard({ initialJobs }: { initialJobs: Job[] }) {
   const activeJobs = filteredJobs.filter((job) => job.status === "Scheduled" || job.status === "In Progress" || job.status === "Ready");
   const historyJobs = filteredJobs.filter((job) => job.status === "Collected");
 
+  const [viewMode, setViewMode] = useState<"pipeline" | "calendar">("pipeline");
+
   return (
     <div className="space-y-12">
-      {/* Search Input */}
-      <div>
+      <div className="flex bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <button 
+          onClick={() => setViewMode("pipeline")}
+          className={`flex-1 py-4 font-black uppercase tracking-widest transition-colors ${viewMode === "pipeline" ? "bg-black text-white" : "bg-white text-black hover:bg-neutral-100"}`}
+        >
+          Pipeline View
+        </button>
+        <div className="w-1 bg-black"></div>
+        <button 
+          onClick={() => setViewMode("calendar")}
+          className={`flex-1 py-4 font-black uppercase tracking-widest transition-colors ${viewMode === "calendar" ? "bg-black text-white" : "bg-white text-black hover:bg-neutral-100"}`}
+        >
+          Calendar View
+        </button>
+      </div>
+
+      {viewMode === "calendar" ? (
+        <CalendarView jobs={filteredJobs} />
+      ) : (
+        <>
+          {/* Search Input */}
+          <div>
         <input
           type="text"
           placeholder="SEARCH REGISTRATION OR NAME..."
@@ -390,6 +482,8 @@ export default function JobBoard({ initialJobs }: { initialJobs: Job[] }) {
           </div>
         )}
       </div>
+        </>
+      )}
     </div>
   );
 }
