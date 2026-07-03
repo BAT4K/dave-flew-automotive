@@ -53,10 +53,15 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
     e.preventDefault();
     setLoading(true);
 
+    const formatLocalISOString = (date: Date) => {
+      const pad = (n: number) => n.toString().padStart(2, '0');
+      return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+    };
+
     const formData = new FormData(e.currentTarget);
     const updates = {
       status: formData.get("status") as string,
-      scheduled_datetime: scheduledDate ? scheduledDate.toISOString() : null,
+      scheduled_datetime: scheduledDate ? formatLocalISOString(scheduledDate) : null,
       estimated_hours: formData.get("estimated_hours") ? parseFloat(formData.get("estimated_hours") as string) : null,
       final_price: formData.get("final_price") ? parseFloat(formData.get("final_price") as string) : null,
       diagnosis_notes: formData.get("diagnosis_notes") as string,
