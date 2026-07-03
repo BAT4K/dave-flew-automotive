@@ -6,15 +6,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 font-sans selection:bg-red-600 selection:text-white">
       {/* Header */}
-      <header className="bg-slate-900 border-b-4 border-red-600 sticky top-0 z-50 shadow-md">
+      <header className="bg-black border-b-4 border-red-600 sticky top-0 z-50 shadow-md">
         <div className="max-w-4xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <Image 
-              src="/images/big_logo.jpg" 
+              src="/images/big_logo (Edited).jpg" 
               alt="Dave Flew Automotive" 
               width={180} 
               height={90} 
-              className="w-32 sm:w-44 h-auto" 
+              className="w-48 sm:w-56 h-auto" 
               priority
             />
           </div>
@@ -153,14 +153,14 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-12 mt-12 border-t-4 border-red-600">
+      <footer className="bg-black text-slate-400 py-12 mt-12 border-t-4 border-red-600">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <Image 
-            src="/images/big_logo.jpg" 
+            src="/images/big_logo (Edited).jpg" 
             alt="Dave Flew Automotive" 
             width={160} 
             height={80} 
-            className="w-32 sm:w-40 h-auto mx-auto mb-6" 
+            className="w-40 sm:w-48 h-auto mx-auto mb-6" 
           />
           <p className="text-slate-400 font-medium mb-6 uppercase tracking-widest text-sm">Expert Auto Repair You Can Trust</p>
           <div className="w-16 h-1 bg-red-600 mx-auto mb-6"></div>
