@@ -107,7 +107,7 @@ export default function Home() {
               "Welding", "Stainless Steel Exhausts", "Lanoguard Underbody Rust Proofing", 
               "Restoration", "Engine Works", "Diagnostics"
             ].map((service, index) => (
-              <div key={index} className="bg-white border-2 border-slate-900 p-4 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(220,38,38,1)] transition-all group flex items-center justify-center text-center min-h-[100px]">
+              <div key={index} className={`bg-white border-2 border-slate-900 p-4 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] hover:-translate-y-1 hover:shadow-[6px_6px_0px_0px_rgba(220,38,38,1)] transition-all group flex items-center justify-center text-center min-h-[100px] ${index >= 8 ? 'md:col-span-2' : ''}`}>
                 <span className="font-black text-slate-900 uppercase tracking-tight group-hover:text-red-600 transition-colors text-sm sm:text-base">{service}</span>
               </div>
             ))}
