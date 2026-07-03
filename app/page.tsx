@@ -167,7 +167,7 @@ export default function Home() {
             allowFullScreen={false} 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            className="w-full grayscale contrast-125 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-in-out"
+            className="w-full"
           ></iframe>
         </div>
       </section>
