@@ -12,9 +12,9 @@ export default function Home() {
             <Image 
               src="/images/big_logo (Edited).jpg" 
               alt="Dave Flew Automotive" 
-              width={180} 
-              height={90} 
-              className="w-48 sm:w-56 h-auto" 
+              width={256} 
+              height={128} 
+              className="w-56 sm:w-72 h-auto" 
               priority
             />
           </div>
@@ -158,9 +158,9 @@ export default function Home() {
           <Image 
             src="/images/big_logo (Edited).jpg" 
             alt="Dave Flew Automotive" 
-            width={160} 
-            height={80} 
-            className="w-40 sm:w-48 h-auto mx-auto mb-6" 
+            width={200} 
+            height={100} 
+            className="w-48 sm:w-64 h-auto mx-auto mb-6" 
           />
           <p className="text-slate-400 font-medium mb-6 uppercase tracking-widest text-sm">Expert Auto Repair You Can Trust</p>
           <div className="w-16 h-1 bg-red-600 mx-auto mb-6"></div>
