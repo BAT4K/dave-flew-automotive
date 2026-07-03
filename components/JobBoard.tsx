@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 import DatePicker from "react-datepicker";
@@ -95,9 +95,15 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
   const [prefYear, prefMonth, prefDay] = job.preferred_day.split("-");
   const formattedPrefDate = `${prefDay}/${prefMonth}/${prefYear}${job.preferred_time_frame && job.preferred_time_frame !== "Anytime" ? ` (${job.preferred_time_frame})` : ""}`;
 
-  const formattedDate = job.scheduled_datetime 
-    ? new Date(job.scheduled_datetime).toLocaleString("en-GB", { dateStyle: 'short', timeStyle: 'short' })
-    : "a time to be confirmed";
+  const [formattedDate, setFormattedDate] = useState("a time to be confirmed");
+
+  useEffect(() => {
+    if (job.scheduled_datetime) {
+      setFormattedDate(new Date(job.scheduled_datetime).toLocaleString("en-GB", { dateStyle: 'short', timeStyle: 'short' }));
+    } else {
+      setFormattedDate("a time to be confirmed");
+    }
+  }, [job.scheduled_datetime]);
 
   const confirmationMessage = encodeURIComponent(`Hi ${job.customer_name}, you are booked in at Dave Flew Automotive for ${formattedDate}.`);
   const reminderMessage = encodeURIComponent(`Hi ${job.customer_name}, just a quick reminder about your booking at Dave Flew Automotive for ${formattedDate}. Let me know if anything changes!`);
