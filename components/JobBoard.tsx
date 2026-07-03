@@ -11,6 +11,7 @@ type Job = {
   customer_name: string;
   customer_phone: string;
   car_reg: string;
+  car_make_model: string | null;
   problem_description: string;
   preferred_day: string;
   preferred_time_frame: string | null;
@@ -113,8 +114,11 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
         onClick={onToggleExpand}
       >
         <div>
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex items-center gap-3 mb-2 flex-wrap">
             <span className="font-black text-black text-lg sm:text-xl uppercase tracking-widest">{job.car_reg}</span>
+            {job.car_make_model && (
+              <span className="font-bold text-neutral-600 text-sm sm:text-base uppercase tracking-wider">{job.car_make_model}</span>
+            )}
             <span className="px-2 py-1 sm:px-3 sm:py-1 rounded-none text-[10px] sm:text-xs font-black uppercase tracking-widest bg-black text-white border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
               {job.status}
             </span>

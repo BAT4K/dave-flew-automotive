@@ -30,6 +30,7 @@ export default function BookingForm() {
       customer_name: formData.get("customer_name") as string,
       customer_phone: formData.get("customer_phone") as string,
       car_reg: (formData.get("car_reg") as string).toUpperCase(),
+      car_make_model: formData.get("car_make_model") as string,
       problem_description: formData.get("problem_description") as string,
       preferred_day: preferredDay ? new Date(preferredDay.getTime() - preferredDay.getTimezoneOffset() * 60000).toISOString().split("T")[0] : "",
       preferred_time_frame: preferredTimeFrame,
@@ -114,27 +115,47 @@ export default function BookingForm() {
         </div>
       </div>
 
-      <div>
-        <label htmlFor="car_reg" className="block text-sm font-bold text-black mb-2 uppercase tracking-wide">
-          Car Registration
-        </label>
-        <input
-          type="text"
-          id="car_reg"
-          name="car_reg"
-          required
-          maxLength={10}
-          onChange={(e) => {
-            e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9\s]/g, "");
-          }}
-          pattern="^[A-Z0-9\s]+$"
-          title="Please enter a valid UK car registration (letters and numbers only)"
-          className="w-full px-4 py-3.5 bg-white border-2 border-black rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-black font-bold placeholder:font-normal peer"
-          placeholder="AB12 CDE"
-        />
-        <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
-          Letters and numbers only.
-        </span>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label htmlFor="car_reg" className="block text-sm font-bold text-black mb-2 uppercase tracking-wide">
+            Car Registration
+          </label>
+          <input
+            type="text"
+            id="car_reg"
+            name="car_reg"
+            required
+            maxLength={10}
+            onChange={(e) => {
+              e.target.value = e.target.value.toUpperCase().replace(/[^A-Z0-9\s]/g, "");
+            }}
+            pattern="^[A-Z0-9\s]+$"
+            title="Please enter a valid UK car registration (letters and numbers only)"
+            className="w-full px-4 py-3.5 bg-white border-2 border-black rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-black font-bold placeholder:font-normal peer"
+            placeholder="AB12 CDE"
+          />
+          <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
+            Letters and numbers only.
+          </span>
+        </div>
+        
+        <div>
+          <label htmlFor="car_make_model" className="block text-sm font-bold text-black mb-2 uppercase tracking-wide">
+            Vehicle Make & Model
+          </label>
+          <input
+            type="text"
+            id="car_make_model"
+            name="car_make_model"
+            required
+            maxLength={100}
+            className="w-full px-4 py-3.5 bg-white border-2 border-black rounded-none focus:bg-white focus:ring-0 focus:border-red-600 outline-none transition-all shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] focus:shadow-[4px_4px_0px_0px_rgba(220,38,38,1)] focus:-translate-y-[2px] focus:-translate-x-[2px] text-black font-medium peer"
+            placeholder="e.g. Ford Transit 2018 or VW Golf"
+          />
+          <span className="hidden peer-[:user-invalid]:block text-red-600 text-sm font-bold mt-2">
+            Please enter your vehicle make and model.
+          </span>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
