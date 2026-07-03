@@ -360,8 +360,29 @@ export default function JobBoard({ initialJobs }: { initialJobs: Job[] }) {
 
   const [viewMode, setViewMode] = useState<"pipeline" | "calendar">("pipeline");
 
+  // Stats Calculations
+  const collectedRevenue = initialJobs.filter(j => j.status === "Collected").reduce((sum, job) => sum + (job.final_price || 0), 0);
+  const pendingRevenue = initialJobs.filter(j => j.status === "Ready").reduce((sum, job) => sum + (job.final_price || 0), 0);
+  const totalActiveJobs = initialJobs.filter(j => j.status !== "Collected").length;
+
   return (
-    <div className="space-y-12">
+    <div className="space-y-8 sm:space-y-12">
+      {/* Stats Bar */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="bg-black text-white p-6 border-4 border-black flex flex-col justify-between">
+          <h2 className="text-xs font-black tracking-widest text-neutral-400 uppercase">Total Revenue (Collected)</h2>
+          <p className="text-4xl font-black mt-2">£{collectedRevenue.toFixed(2)}</p>
+        </div>
+        <div className="bg-white text-black p-6 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+          <h2 className="text-xs font-black tracking-widest text-neutral-500 uppercase">Pending Revenue (Ready)</h2>
+          <p className="text-4xl font-black mt-2">£{pendingRevenue.toFixed(2)}</p>
+        </div>
+        <div className="bg-white text-black p-6 border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
+          <h2 className="text-xs font-black tracking-widest text-neutral-500 uppercase">Active Pipeline Jobs</h2>
+          <p className="text-4xl font-black mt-2">{totalActiveJobs}</p>
+        </div>
+      </div>
+
       <div className="flex bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
         <button 
           onClick={() => setViewMode("pipeline")}
