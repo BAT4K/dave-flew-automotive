@@ -101,7 +101,8 @@ function JobCard({ job, isExpanded, onToggleExpand }: { job: Job; isExpanded: bo
   const confirmationMessage = encodeURIComponent(`Hi ${job.customer_name}, you are booked in at Dave Flew Automotive for ${formattedDate}.`);
   const reminderMessage = encodeURIComponent(`Hi ${job.customer_name}, just a quick reminder about your booking at Dave Flew Automotive for ${formattedDate}. Let me know if anything changes!`);
   const rescheduleMessage = encodeURIComponent(`Hi ${job.customer_name}, just a heads up that your car needs further work. We have moved your slot to ${formattedDate}.`);
-  const readyMessage = encodeURIComponent(`Hi ${job.customer_name}, your car is ready for collection at Dave Flew Automotive! The final total is £${job.final_price ? job.final_price : "____"}. We accept Cash or Card on arrival. See you soon.`);
+  const formattedPrice = job.final_price ? Number(job.final_price).toFixed(2) : "____";
+  const readyMessage = encodeURIComponent(`Hi ${job.customer_name}, your car is ready for collection at Dave Flew Automotive! The final total is £${formattedPrice}. We accept Cash or Card on arrival. See you soon.`);
   const reviewMessage = encodeURIComponent(`Hi ${job.customer_name}, thanks for choosing Dave Flew Automotive! If you were happy with the service, it would mean the world if you could leave a quick review here: https://g.page/r/YOUR_GOOGLE_ID/review`);
 
   return (
