@@ -8,9 +8,9 @@ export default async function AdminLayout({
   children: React.ReactNode;
 }) {
   const supabase = await createClient();
-  const { data: { session } } = await supabase.auth.getSession();
+  const { data: { user } } = await supabase.auth.getUser();
 
-  if (!session) {
+  if (!user) {
     redirect("/login");
   }
 
@@ -22,7 +22,7 @@ export default async function AdminLayout({
             Dave Flew Automotive
           </Link>
           <div className="text-xs sm:text-sm font-bold bg-white text-black px-3 py-1.5 sm:px-4 sm:py-2 border-2 border-black truncate shrink-0 max-w-[140px] sm:max-w-none">
-            {session.user.email}
+            {user.email}
           </div>
         </div>
       </header>
