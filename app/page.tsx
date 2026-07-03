@@ -120,54 +120,21 @@ export default function Home() {
             <span className="w-8 h-1 bg-red-600 inline-block"></span>
             Inside the Shop
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Column 1: Camper, Exhaust */}
-            <div className="flex flex-col gap-6">
-              {[
-                { src: "/images/van4withdaveflew.jpg", alt: "Classic VW Camper" },
-                { src: "/images/car_exhaust.jpg", alt: "Custom Stainless Steel Exhaust" },
-              ].map((img, i) => (
-                <div key={i} className="relative border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] bg-black overflow-hidden group transition-transform hover:-translate-y-1">
-                  <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto block group-hover:scale-110 transition-transform duration-500" />
-                </div>
-              ))}
-            </div>
-
-            {/* Column 2: Engine, Jeep */}
-            <div className="flex flex-col gap-6">
-              {[
-                { src: "/images/v6engine.jpg", alt: "Restored V6 Engine" },
-                { src: "/images/jeep3.jpg", alt: "Custom Jeep Wrangler" },
-              ].map((img, i) => (
-                <div key={i} className="relative border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] bg-black overflow-hidden group transition-transform hover:-translate-y-1">
-                  <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto block group-hover:scale-110 transition-transform duration-500" />
-                </div>
-              ))}
-            </div>
-
-            {/* Column 3: Subframe, Mercedes, BMW */}
-            <div className="flex flex-col gap-6">
-              {[
-                { src: "/images/parts3.jpg", alt: "Restored Subframe Assembly" },
-                { src: "/images/merc.jpg", alt: "Classic Mercedes Sedan" },
-                { src: "/images/bmw3.jpg", alt: "BMW Z3 Convertible" }
-              ].map((img, i) => (
-                <div key={i} className="relative border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] bg-black overflow-hidden group transition-transform hover:-translate-y-1">
-                  <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto block group-hover:scale-110 transition-transform duration-500" />
-                </div>
-              ))}
-            </div>
-
-            {/* Column 4: Brake Caliper (Portrait) */}
-            <div className="flex flex-col gap-6">
-              {[
-                { src: "/images/machinery.jpg", alt: "Brake Caliper Installation" },
-              ].map((img, i) => (
-                <div key={i} className="relative border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] bg-black overflow-hidden group transition-transform hover:-translate-y-1">
-                  <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-auto block group-hover:scale-110 transition-transform duration-500" />
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            {[
+              { src: "/images/new pics/van4withdaveflew.jpg", alt: "Classic VW Camper" },
+              { src: "/images/new pics/v6engine.jpg", alt: "Restored V6 Engine" },
+              { src: "/images/new pics/car_exhaust.jpg", alt: "Custom Stainless Steel Exhaust" },
+              { src: "/images/new pics/parts.jpg", alt: "Restored Suspension Components" },
+              { src: "/images/new pics/merc.jpg", alt: "Classic Mercedes Sedan" },
+              { src: "/images/new pics/jeep3.jpg", alt: "Custom Jeep Wrangler" },
+              { src: "/images/new pics/bmw.jpg", alt: "BMW Convertible" },
+              { src: "/images/new pics/blackcar2.jpg", alt: "Classic Car Restoration" }
+            ].map((img, i) => (
+              <div key={i} className="relative aspect-video border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] bg-black overflow-hidden group transition-transform hover:-translate-y-1">
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+              </div>
+            ))}
           </div>
         </div>
 
