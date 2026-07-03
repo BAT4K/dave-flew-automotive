@@ -131,8 +131,8 @@ export default function Home() {
               { src: "/images/jeep3.jpg", alt: "Custom Jeep Wrangler" },
               { src: "/images/bmw3.jpg", alt: "BMW Z3 Convertible" }
             ].map((img, i) => (
-              <div key={i} className="flex-none w-[85%] sm:w-auto snap-center sm:snap-align-none relative aspect-[4/3] border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1 bg-black">
-                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 25vw" className="object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div key={i} className="flex-none w-[85%] sm:w-auto snap-center sm:snap-align-none relative aspect-square border-4 border-slate-900 shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] overflow-hidden group transition-transform hover:-translate-y-1 bg-black">
+                <Image src={img.src} alt={img.alt} fill sizes="(max-width: 768px) 100vw, 25vw" className="object-contain group-hover:scale-110 transition-transform duration-500" />
               </div>
             ))}
           </div>
