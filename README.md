@@ -17,10 +17,18 @@ The site employs a **Brutalist** aesthetic characterized by:
 - Bold, uppercase typography for maximum readability.
 - Micro-animations and hover effects that emphasize structural weight (e.g., buttons depressing on click).
 
+## ✨ Core Features & Automations
+
+- **Zero-Cost WhatsApp Integrations:** Instead of relying on expensive third-party SMS APIs, the admin panel natively generates dynamic WhatsApp message links. With a single click, Dave can send perfectly formatted appointment reminders, "car ready" notices (including final price and payment instructions), and Google Review requests.
+- **Smart Admin Dashboard:** Features a dual-view system allowing Dave to manage cars via a Kanban-style pipeline or a chronological Calendar view to prevent double-booking.
+- **Real-Time Revenue Tracking:** A brutalist stats dashboard automatically calculates and displays both total collected revenue and pending revenue in real-time, completely eliminating the need for spreadsheets.
+- **Interactive Local SEO:** A seamlessly integrated, fully functional Google Map embedded on the homepage to drive immediate local conversions.
+
 ## 🔒 Security & Architecture
 
 - **Server Components (RSC):** The majority of the application renders on the server, shipping zero unnecessary JavaScript to the client.
 - **Secure Server Actions:** Database mutations strictly run on the server and mathematically verify the user's authentication token (`getUser()`) before execution.
+- **Zero-Trust Input Handling:** Stringent phone number parsing guarantees WhatsApp automations never break, even if customers enter chaotic or heavily punctuated phone numbers.
 - **Optimized Latency:** The Vercel frontend (`lhr1`) and Supabase database (`eu-west-2`) are geographically co-located in London to ensure sub-millisecond database queries.
 
 ## 🚀 Getting Started
