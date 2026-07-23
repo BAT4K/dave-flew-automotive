@@ -22,6 +22,10 @@ export async function sendBookingNotification(data: BookingData) {
       },
     });
 
+    // Format the date from YYYY-MM-DD to DD/MM/YYYY
+    const [year, month, day] = data.preferred_day.split("-");
+    const formattedDate = day && month && year ? `${day}/${month}/${year}` : data.preferred_day;
+
     const htmlContent = `
       <div style="font-family: sans-serif; max-width: 600px; padding: 20px; border: 2px solid #000; background-color: #f9f9f9;">
         <h2 style="text-transform: uppercase; border-bottom: 2px solid #000; padding-bottom: 10px; margin-top: 0;">New Booking Request</h2>
@@ -29,7 +33,7 @@ export async function sendBookingNotification(data: BookingData) {
         <p><strong>Phone:</strong> ${data.customer_phone}</p>
         <p><strong>Car Reg:</strong> ${data.car_reg}</p>
         <p><strong>Make & Model:</strong> ${data.car_make_model}</p>
-        <p><strong>Preferred Day:</strong> ${data.preferred_day} (${data.preferred_time_frame})</p>
+        <p><strong>Preferred Day:</strong> ${formattedDate} (${data.preferred_time_frame})</p>
         
         <h3 style="text-transform: uppercase; margin-top: 20px;">Problem Description</h3>
         <p style="background: #fff; padding: 15px; border: 1px solid #ccc;">${data.problem_description}</p>
@@ -42,7 +46,7 @@ export async function sendBookingNotification(data: BookingData) {
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: "hans.james.james@gmail.com", // Temporary testing email
+      to: "flewy86@gmail.com",
       subject: `New Booking Request: ${data.car_reg}`,
       html: htmlContent,
     };
