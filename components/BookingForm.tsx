@@ -4,6 +4,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { createClient } from "@/lib/supabase/client";
+import { sendBookingNotification } from "@/app/actions/sendBookingNotification";
 
 export default function BookingForm() {
   const [loading, setLoading] = useState(false);
@@ -44,6 +45,9 @@ export default function BookingForm() {
       setError("An error occurred while submitting your request. Please try again.");
       setLoading(false);
     } else {
+      // Send email notification in the background
+      sendBookingNotification(data).catch(err => console.error("Failed to send email notification", err));
+      
       setSuccess(true);
       setLoading(false);
     }
