@@ -45,8 +45,8 @@ export default function BookingForm() {
       setError("An error occurred while submitting your request. Please try again.");
       setLoading(false);
     } else {
-      // Send email notification in the background
-      sendBookingNotification(data).catch(err => console.error("Failed to send email notification", err));
+      // Send email notification
+      await sendBookingNotification(data).catch(err => console.error("Failed to send email notification", err));
       
       setSuccess(true);
       setLoading(false);
